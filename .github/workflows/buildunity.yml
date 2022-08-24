@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
         with:
-          repository: GDShef/GameCIPOC
+          repository: ${{ steps.inputs.repo_path }}
           token: ${{ secrets.MY_PAT }}
 
       - uses: actions/cache@v2
@@ -35,11 +35,17 @@ jobs:
           path: Library
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
+          
+      #Build    
+          
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
+          
+      #Output    
+          
       - uses: actions/upload-artifact@v2
         with:
           name: Build-${{ matrix.targetPlatform }}
