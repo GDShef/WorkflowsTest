@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
         with:
-          repository: ${{ github.event.inputs.repo_path }}
+          repository: GDShef/GameCIPOC
           token: ${{ secrets.MY_PAT }}
 
       - uses: actions/cache@v2
