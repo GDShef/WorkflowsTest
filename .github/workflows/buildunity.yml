@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: ${{ github.event.inputs.repo_path }}
-          token: ${{ secrets.my_pat }}
+          token: ${{ secrets.MY_PAT }}
 
       - uses: actions/cache@v2
         with:
