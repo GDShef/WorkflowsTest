@@ -25,7 +25,7 @@ jobs:
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@master
         with:
           repository: ${{ github.event.inputs.repo_path }}
           token: ${{ secrets.MY_PAT }}
