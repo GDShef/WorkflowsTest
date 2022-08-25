@@ -29,6 +29,7 @@ jobs:
         with:
           repository: ${{ github.event.inputs.repo_path }}
           token: ${{ secrets.MY_PAT }}
+          path: './project'
 
       - uses: actions/cache@v2
         with:
@@ -43,6 +44,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
+          projectPath: './project'
           
       #Output    
           
